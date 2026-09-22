@@ -1,0 +1,952 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>汰暄酒業｜名莊珍藏・精品葡萄酒選品</title>
+
+<meta name="description" content="汰暄酒業｜Albert Bichot、Château Clarke、Château des Laurets 精品葡萄酒選品。探索法國布根地與波爾多名莊風土。">
+
+<style>
+:root{
+    --wine:#641f2b;
+    --wine-dark:#45151e;
+    --gold:#d7c39a;
+    --cream:#f7f4ee;
+    --paper:#fbfaf7;
+    --ink:#252525;
+    --muted:#77716a;
+    --line:rgba(80,60,50,.14);
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        "Noto Serif TC",
+        "PingFang TC",
+        "Microsoft JhengHei",
+        serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.8;
+}
+
+/* =========================
+   浮動立即洽詢按鈕
+========================= */
+
+.floating-contact{
+    position:fixed;
+    right:28px;
+    bottom:28px;
+
+    min-width:150px;
+    height:52px;
+    padding:0 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--wine);
+    color:#fff;
+
+    border:1px solid rgba(215,195,154,.8);
+    border-radius:999px;
+
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    letter-spacing:2px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.22);
+
+    z-index:9999;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.floating-contact:hover{
+    background:var(--wine-dark);
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.28);
+}
+
+/* =========================
+   共用
+========================= */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:0 auto;
+}
+
+.section{
+    padding:110px 0;
+}
+
+.eyebrow{
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-size:12px;
+    letter-spacing:4px;
+    color:var(--gold);
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+}
+
+h1,h2,h3{
+    font-weight:500;
+}
+
+p{
+    color:#555;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+    min-height:92vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            rgba(35,20,20,.66),
+            rgba(35,20,20,.66)
+        ),
+        url("hero.jpg")
+        center/cover no-repeat;
+
+    color:#fff;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:20px;
+
+    border:1px solid rgba(215,195,154,.38);
+
+    pointer-events:none;
+}
+
+.hero-inner{
+    width:min(900px,90%);
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.hero .eyebrow{
+    color:var(--gold);
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,72px);
+    line-height:1.25;
+    letter-spacing:5px;
+    margin-bottom:25px;
+}
+
+.hero p{
+    color:rgba(255,255,255,.86);
+    font-size:16px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   Intro
+========================= */
+
+.intro{
+    padding:100px 0 80px;
+    text-align:center;
+    background:var(--cream);
+}
+
+.intro h2{
+    font-size:clamp(28px,4vw,42px);
+    letter-spacing:3px;
+    margin-bottom:25px;
+    color:var(--wine);
+}
+
+.intro p{
+    max-width:760px;
+    margin:0 auto;
+    font-size:16px;
+    line-height:2.1;
+}
+
+/* =========================
+   Product Section
+========================= */
+
+.product{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:720px;
+}
+
+.product-image{
+    min-height:650px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f1e9,
+            #ebe5da
+        );
+
+    padding:60px;
+}
+
+.product-image img{
+    width:100%;
+    max-width:520px;
+    max-height:650px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 20px 25px rgba(0,0,0,.14));
+}
+
+.product-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:
+        90px
+        clamp(35px,7vw,120px);
+
+    background:#fff;
+}
+
+.product-content .eyebrow{
+    color:var(--wine);
+}
+
+.product-content h2{
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.35;
+    color:var(--wine);
+    letter-spacing:2px;
+    margin-bottom:16px;
+}
+
+.product-subtitle{
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
+
+    color:#8b8178;
+
+    font-size:13px;
+    letter-spacing:2px;
+
+    margin-bottom:35px;
+}
+
+.product-description{
+    font-size:16px;
+    line-height:2;
+    margin-bottom:35px;
+}
+
+.product-note{
+    border-left:2px solid var(--gold);
+    padding-left:20px;
+
+    color:#777;
+
+    font-size:14px;
+    line-height:1.9;
+
+    margin-bottom:40px;
+}
+
+.cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:max-content;
+
+    padding:14px 30px;
+
+    border:1px solid var(--wine);
+
+    color:var(--wine);
+
+    text-decoration:none;
+
+    font-size:14px;
+    letter-spacing:2px;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.cta:hover{
+    background:var(--wine);
+    color:#fff;
+}
+
+/* =========================
+   Product Alternating
+========================= */
+
+.product.reverse .product-image{
+    order:2;
+}
+
+.product.reverse .product-content{
+    order:1;
+}
+
+/* =========================
+   Section divider
+========================= */
+
+.divider{
+    width:100%;
+    height:1px;
+    background:var(--line);
+}
+
+/* =========================
+   Company
+========================= */
+
+.company{
+    padding:100px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--wine-dark),
+            var(--wine)
+        );
+
+    color:#fff;
+
+    text-align:center;
+}
+
+.company-inner{
+    max-width:800px;
+    margin:auto;
+}
+
+.company-title{
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-size:12px;
+    letter-spacing:5px;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.company h2{
+    font-size:38px;
+    letter-spacing:5px;
+    margin-bottom:35px;
+}
+
+.company-info{
+    font-size:15px;
+    line-height:2.2;
+    color:rgba(255,255,255,.86);
+}
+
+.company-info .phone{
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-size:20px;
+    letter-spacing:2px;
+    color:#fff;
+
+    margin-bottom:8px;
+}
+
+.address{
+    margin-bottom:5px;
+}
+
+.company-hours{
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    padding:30px 20px;
+
+    text-align:center;
+
+    background:#251116;
+    color:rgba(255,255,255,.55);
+
+    font-family:
+        "Arial",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media(max-width:900px){
+
+    .product{
+        grid-template-columns:1fr;
+    }
+
+    .product-image{
+        min-height:520px;
+        padding:50px 30px;
+    }
+
+    .product-content{
+        padding:70px 8%;
+    }
+
+    .product.reverse .product-image{
+        order:1;
+    }
+
+    .product.reverse .product-content{
+        order:2;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero::after{
+        inset:12px;
+    }
+
+    .hero h1{
+        letter-spacing:3px;
+    }
+
+    .hero p{
+        font-size:13px;
+        line-height:1.9;
+    }
+
+    .intro{
+        padding:70px 20px;
+    }
+
+    .intro h2{
+        font-size:28px;
+    }
+
+    .product-image{
+        min-height:420px;
+        padding:40px 25px;
+    }
+
+    .product-content{
+        padding:60px 25px;
+    }
+
+    .product-content h2{
+        font-size:30px;
+    }
+
+    .cta{
+        width:100%;
+    }
+
+    /* 手機版浮動按鈕 */
+
+    .floating-contact{
+        right:18px;
+        bottom:18px;
+
+        min-width:140px;
+        width:auto;
+
+        height:48px;
+
+        padding:0 18px;
+
+        font-size:13px;
+        letter-spacing:1.5px;
+    }
+
+    .company{
+        padding:75px 20px;
+    }
+
+    .company h2{
+        font-size:30px;
+    }
+
+    .address{
+        font-size:13px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     浮動立即洽詢按鈕
+========================= -->
+
+<a
+    href="https://reurl.cc/dO1Rey"
+    target="_blank"
+    rel="noopener"
+    class="floating-contact"
+    aria-label="立即線上洽詢"
+>
+    立即線上洽詢
+</a>
+
+
+<!-- =========================
+     Hero
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="eyebrow">
+            TAIXUAN WINE
+        </div>
+
+        <h1>
+            名莊珍藏<br>
+            精品葡萄酒選品
+        </h1>
+
+        <p>
+            從布根地的細緻風土，到波爾多的經典傳承
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     Intro
+========================= -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="eyebrow">
+            Selected Estates
+        </div>
+
+        <h2>
+            四款值得細細品味的名莊佳釀
+        </h2>
+
+        <p>
+            汰暄酒業精選來自法國布根地與波爾多的代表性酒款，
+            從單一園、獨佔園，到經典左岸與右岸酒莊，
+            將不同產區的風土與酒莊個性，帶到每一次餐桌與收藏之中。
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Product 01
+========================= -->
+
+<section class="product">
+
+    <div class="product-image">
+
+        <!-- 單瓶酒款圖片 -->
+        <img
+            src="bichot-chateau-gris-2023.jpg"
+            alt="Albert Bichot Nuits-Saint-Georges 1er Cru Château Gris Monopole Château Gris 2023"
+        >
+
+    </div>
+
+
+    <div class="product-content">
+
+        <div class="eyebrow">
+            Burgundy · Nuits-Saint-Georges
+        </div>
+
+        <h2>
+            Albert Bichot
+            <br>
+            Nuits-Saint-Georges 1er Cru
+            <br>
+            “Château Gris” Monopole
+        </h2>
+
+        <div class="product-subtitle">
+            Château Gris 2023 · Nuits-Saint-Georges · Monopole
+        </div>
+
+        <div class="product-description">
+
+            夜聖喬治一級園 Château Gris，
+            是 Albert Bichot 在布根地夜丘的重要代表性酒款。
+
+            <br><br>
+
+            單一園、獨佔園的身份，
+            讓這款酒呈現出鮮明而細緻的風土個性，
+            兼具布根地黑皮諾的優雅與深度。
+
+        </div>
+
+        <div class="product-note">
+            Burgundy · Côte de Nuits<br>
+            Nuits-Saint-Georges 1er Cru · Monopole
+        </div>
+
+        <a
+            class="cta"
+            href="https://www.mychumi.com/edm.php?ed=8007"
+            target="_blank"
+            rel="noopener"
+        >
+            探索這款風土 →
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================
+     Product 02
+========================= -->
+
+<section class="product reverse">
+
+    <div class="product-image">
+
+        <!-- 單瓶酒款圖片 -->
+        <img
+            src="bichot-clos-des-ursulines.jpg"
+            alt="Albert Bichot Pommard Clos des Ursulines"
+        >
+
+    </div>
+
+
+    <div class="product-content">
+
+        <div class="eyebrow">
+            Burgundy · Pommard
+        </div>
+
+        <h2>
+            Albert Bichot
+            <br>
+            Pommard
+            <br>
+            “Clos des Ursulines”
+        </h2>
+
+        <div class="product-subtitle">
+            Domaine du Pavillon · Monopole
+        </div>
+
+        <div class="product-description">
+
+            Clos des Ursulines 是 Albert Bichot
+            Domaine du Pavillon 所擁有的重要獨佔園。
+
+            <br><br>
+
+            Pommard 以結構感與深度著稱，
+            而 Clos des Ursulines 則展現出酒莊對於
+            黑皮諾細節與風土表現的理解。
+
+        </div>
+
+        <div class="product-note">
+            Burgundy · Côte de Beaune<br>
+            Pommard · Monopole
+        </div>
+
+        <a
+            class="cta"
+            href="https://www.mychumi.com/edm.php?ed=8000"
+            target="_blank"
+            rel="noopener"
+        >
+            探索 Clos des Ursulines →
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================
+     Product 03
+========================= -->
+
+<section class="product">
+
+    <div class="product-image">
+
+        <!-- 單瓶酒款圖片 -->
+        <img
+            src="chateau-clarke.jpg"
+            alt="Château Clarke"
+        >
+
+    </div>
+
+
+    <div class="product-content">
+
+        <div class="eyebrow">
+            Bordeaux · Listrac-Médoc
+        </div>
+
+        <h2>
+            Château Clarke
+        </h2>
+
+        <div class="product-subtitle">
+            Listrac-Médoc · Bordeaux
+        </div>
+
+        <div class="product-description">
+
+            Château Clarke 是波爾多左岸的重要酒莊之一，
+            位於 Listrac-Médoc 產區。
+
+            <br><br>
+
+            以 Cabernet Sauvignon 與 Merlot
+            等品種構成酒款的核心架構，
+            展現梅多克葡萄酒特有的結構感、
+            黑色果實與陳年潛力。
+
+        </div>
+
+        <div class="product-note">
+            Bordeaux · Médoc<br>
+            Listrac-Médoc
+        </div>
+
+        <a
+            class="cta"
+            href="https://www.mychumi.com/edm.php?ed=8018"
+            target="_blank"
+            rel="noopener"
+        >
+            探索 Château Clarke →
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================
+     Product 04
+========================= -->
+
+<section class="product reverse">
+
+    <div class="product-image">
+
+        <!-- 單瓶酒款圖片 -->
+        <img
+            src="chateau-des-laurets.jpg"
+            alt="Château des Laurets"
+        >
+
+    </div>
+
+
+    <div class="product-content">
+
+        <div class="eyebrow">
+            Bordeaux · Puisseguin-Saint-Émilion
+        </div>
+
+        <h2>
+            Château des Laurets
+        </h2>
+
+        <div class="product-subtitle">
+            Puisseguin-Saint-Émilion · Bordeaux
+        </div>
+
+        <div class="product-description">
+
+            Château des Laurets 位於波爾多右岸
+            Puisseguin-Saint-Émilion 產區。
+
+            <br><br>
+
+            右岸經典的 Merlot 主導風格，
+            搭配 Cabernet Franc 等品種，
+            呈現成熟果實、柔和結構與優雅質地。
+
+        </div>
+
+        <div class="product-note">
+            Bordeaux · Rive Droite<br>
+            Puisseguin-Saint-Émilion
+        </div>
+
+        <a
+            class="cta"
+            href="https://www.mychumi.com/edm.php?ed=8026"
+            target="_blank"
+            rel="noopener"
+        >
+            探索 Château des Laurets →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Company
+========================= -->
+
+<section class="company">
+
+    <div class="company-inner">
+
+        <div class="company-title">
+            TAIXUAN WINE
+        </div>
+
+        <h2>
+            汰暄酒業
+        </h2>
+
+        <div class="company-info">
+
+            <div class="phone">
+                02-23650988
+            </div>
+
+            <div class="address">
+                台北市大安區新生南路三段20號之一1F
+            </div>
+
+            <div class="company-hours">
+                營業時間：9:00～17:00
+            </div>
+
+            <div class="company-hours">
+                週末／例假日公休
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    TAIXUAN WINE · 汰暄酒業
+
+</footer>
+
+
+</body>
+</html>
+```
